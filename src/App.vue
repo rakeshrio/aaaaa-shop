@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="col-md-12 col-12 m-0 p-0">
-    <navigation ></navigation>
+    <navigation v-if="!$route.meta.hideNavigation"></navigation>
     <router-view />
     <upperfooter style="  left: 0;
-  bottom: 0 !important; "></upperfooter>
+  bottom: 0 !important; " v-if="!$route.meta.hideNavigation"></upperfooter>
     <div class="loading-overlay" v-if="makingAJAX">
       <div class="loading">
         <div class="lds-ellipsis">

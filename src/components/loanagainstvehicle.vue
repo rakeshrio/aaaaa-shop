@@ -143,7 +143,7 @@
                                     <button class="btun1" @click.prevent="prev()">Previous</button>
                                 </div>
                                 <div class="col-md-4 col-6 cursor"  >
-                                    <button class="btun2" id="rak"  @click="submit" :disabled="watchsendingrequest">
+                                    <button class="btun2" id="rak"  @click="submit" :disabled="error">
                                       
                                     SUBMIT
                                     </button>
@@ -427,13 +427,13 @@ export default {
     
   },
      computed:{
-    //  error(){
-    //      if(this.fullname ==""||this.mobile==""||this.know_two_wheeler==""||this.aadhar_card==""||this.pancard ==""||this.dob==""||this.gender==""||this.city==""||this.year_of_purchase==""||this.registration_no==""){
-    //          return true
-    //      }else{
-    //          return false
-    //      }
-    //  },
+     error(){
+         if(this.fullname && this.mobile&& this.know_two_wheeler&& this.aadhar_card&& this.pancard && this.dob&& this.gender&& this.city&& this.year_of_purchase&& this.registration_no){
+             return false
+         }else{
+             return true
+         }
+     },
      watchsendingrequest(){
       return this.sendingRequest
     },

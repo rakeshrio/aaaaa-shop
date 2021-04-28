@@ -13,7 +13,7 @@
                                 <a class="nav-link mx-3" href="https://book.on-track.in" >Rent</a>
                             </li>
                             <li class="nav-item1">
-                                <a class="nav-link mx-3 active" href="https://shop.on-track.in">Buy</a>    
+                                <a class="nav-link mx-3 " href="https://shop.on-track.in">Buy</a>    
                             </li>
                         </ul>
                         <button class="login p-1 px-3" style="color:white"><i class="fa fa-phone"  style="color:white"></i> 9148518401</button>

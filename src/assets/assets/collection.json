@@ -1,0 +1,460 @@
+{
+	"id": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+	"name": "TW Online",
+	"description": "",
+	"order": [
+		"9b94b1dd-d941-53a8-0a2d-7cdb4728e303",
+		"b1a4d308-847e-02ea-47e1-3c78ab7f54e8",
+		"9db9abf0-e941-8b29-45b3-eb0abf3d97fe",
+		"a193f131-e75e-3416-3a6a-0fafe39714ae",
+		"7704e3be-e97d-5397-8b5c-bd14950656b0",
+		"d3120558-6081-cbb7-9ded-f9dece9e0dbe",
+		"5404b25f-dafc-16c5-d110-588aa4ed0efa",
+		"1b0280aa-c2b5-29d8-1986-808e77ff86f0"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1583490752141,
+	"owner": "13576980",
+	"public": false,
+	"hasRequests": true,
+	"requests": [
+		{
+			"id": "1b0280aa-c2b5-29d8-1986-808e77ff86f0",
+			"headers": "Content-Type: application/json\nuser_name: cflintegration\nsvc_name: UPDATELOAN\npassword: sdfvklj40934tsdlvjk309sd\nsource: TWonline\nenvironment: UAT\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user_name",
+					"value": "cflintegration",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "svc_name",
+					"value": "UPDATELOAN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "sdfvklj40934tsdlvjk309sd",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "source",
+					"value": "TWonline",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "environment",
+					"value": "UAT",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://muleuat.capitalfirst.com:8443/uatapigateway/sfdc_inbound_api",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"data": [],
+			"dataMode": "raw",
+			"name": "BD Update",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1588139716538,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n   \"svcName\": \"UPDATELOAN\",\r\n   \"applicationId\": \"70327400516\",\r\n   \"cartInfo\": [\r\n      {\r\n         \"itemIdentifier\": \"TW\",\r\n         \"productSku\": 2044943,\r\n         \"productQty\": 1,\r\n         \"brand\": 1113,\r\n         \"AssetGroup\": \"56\",\r\n         \"assetCost\": 81157,\r\n         \"offerScheme\": \"175\",\r\n         \"marginMoney\": 10000\r\n      }\r\n   ],\r\n   \"customerProfile\": [\r\n      {\r\n         \"partnerCustomerIdentifier\": \"\",\r\n         \"bankingDetails\": [],\r\n         \"address\": [\r\n            {\r\n               \"addressLine1\": \"office No 96-E,16th Main road\",\r\n               \"addressLine2\": \"Service Road, SBI Staff Colony,\",\r\n               \"pincode\": \"560040\",\r\n               \"addressType\": \"OFFICE ADDRESS\",\r\n               \"propertyStatus\": \"O\"\r\n            },\r\n            {\r\n               \"addressLine1\": \"house no 1 nagamma compound\",\r\n               \"addressLine2\": \"R.G. street K.G\",\r\n               \"pincode\": \"560019\",\r\n               \"addressType\": \"PERMANENT ADDRESS\",\r\n               \"propertyStatus\": \"O\"\r\n            }\r\n         ],\r\n         \"liability\": [],\r\n         \"employmentInfo\": [\r\n            {\r\n               \"employmentType\": \"Salaried\",\r\n               \"employerName\": \"Sri Rama Traders & co\",\r\n               \"annualGrossSalary\": 222000\r\n            }\r\n         ],\r\n         \"incomeDetails\": []\r\n      }\r\n   ],\r\n   \"reference\": [\r\n      {\r\n         \"referenceRelationToCustomer\": \"FRIEND\",\r\n         \"referenceTitle\": \"Mr\",\r\n         \"referenceFirstName\": \"Shiva\",\r\n         \"referenceMiddleName\": \"\",\r\n         \"referenceLastName\": \"prasad\",\r\n         \"referenceMobilePhoneNumber\": \"6361776340\",\r\n         \"address\": []\r\n      },\r\n      {\r\n         \"referenceRelationToCustomer\": \"FRIEND\",\r\n         \"referenceTitle\": \"Mr\",\r\n         \"referenceFirstName\": \"\",\r\n         \"referenceMiddleName\": \"\",\r\n         \"referenceLastName\": \"\",\r\n         \"referenceMobilePhoneNumber\": \"\",\r\n         \"address\": []\r\n      }\r\n   ],\r\n   \"offers\": [],\r\n   \"surrogateInfo\": [],\r\n   \"consumerConsent\": null\r\n}",
+			"collection_id": "f0941cff-aac2-6903-c0d6-e3ed239984ce"
+		},
+		{
+			"id": "5404b25f-dafc-16c5-d110-588aa4ed0efa",
+			"headers": "Content-Type: application/json\nuser_name: cflintegration\nsvc_name: CREATELOAN\npassword: sdfvklj40934tsdlvjk309sd\nsource: TWonline\nenvironment: UAT\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user_name",
+					"value": "cflintegration",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "svc_name",
+					"value": "CREATELOAN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "sdfvklj40934tsdlvjk309sd",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "source",
+					"value": "TWonline",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "environment",
+					"value": "UAT",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://muleuat.capitalfirst.com:8443/uatapigateway/sfdc_inbound_api",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1588144963212,
+			"name": "BD Create",
+			"description": "",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"responses": [],
+			"rawModeData": "{\r\n   \"svcName\": \"CREATELOAN\",\r\n   \"partnerName\": \"Bike_Dekho\",\r\n   \"location\": \"Bangalore\",\r\n   \"lob\": \"TW\",\r\n   \"createdBy\": \"Customer\",\r\n   \"loanSource\": \"TW-Online\",\r\n   \"customerProfile\": [\r\n      {\r\n         \"partnerCustomerIdentifier\": \"\",\r\n         \"gender\": \"Male\",\r\n         \"maritalStatus\": \"Single\",\r\n         \"firstName\": \"Anil Kumar\",\r\n         \"lastName\": \"Yadav\",\r\n         \"fatherFirstName\": \"Ram\",\r\n         \"fatherLastName\": \"Nawal\",\r\n         \"applicantType\": \"Applicant\",\r\n         \"mobileNumber\": \"9928728743\",\r\n         \"emailId\": \"anilyadav@gmail.com\",\r\n         \"dateOfBirth\": \"09-04-1981\",\r\n         \"bankingDetails\": [],\r\n         \"identifier\": [\r\n            {\r\n               \"type\": \"PAN\",\r\n               \"value\": \"BKSPV3087M\"\r\n            }\r\n         ],\r\n         \"address\": [\r\n            {\r\n               \"addressLine1\": \"house no 70 1 st floor\",\r\n               \"addressLine2\": \"8 th main road kallappa\",\r\n               \"pincode\": \"560050\",\r\n               \"addressType\": \"RESIDENCE ADDRESS\",\r\n               \"propertyStatus\": \"R\"\r\n            }\r\n         ],\r\n         \"employmentInfo\": null,\r\n         \"incomeDetails\": []\r\n      }\r\n   ],\r\n   \"reference\": [],\r\n   \"offers\": [],\r\n   \"documents\": [],\r\n   \"consumerConsent\": null,\r\n   \"campaignDetails\": null\r\n}",
+			"collection_id": "f0941cff-aac2-6903-c0d6-e3ed239984ce"
+		},
+		{
+			"id": "7704e3be-e97d-5397-8b5c-bd14950656b0",
+			"headers": "Content-Type: application/json\nuser_name: cflintegration\nsvc_name: UPDATELOAN\npassword: sdfvklj40934tsdlvjk309sd\nsource: TWonline\nenvironment: QA\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user_name",
+					"value": "cflintegration",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "svc_name",
+					"value": "UPDATELOAN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "sdfvklj40934tsdlvjk309sd",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "source",
+					"value": "TWonline",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "environment",
+					"value": "QA",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://muleuat.capitalfirst.com:8443/uatapigateway/sfdc_inbound_api",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1609931375957,
+			"name": "QA Update",
+			"description": "",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"responses": [],
+			"rawModeData": "\r\n{\r\n\"requestHeaderSource\":\"Bike_Dekho\",\r\n\"svcName\":\"UPDATELOAN\",\r\n\"applicationId\":\"90328497574\",\r\n\"cartInfo\":[{\"brand\":\"1114\",\r\n\"itemIdentifier\":\"item123\",\r\n\"assetGroup\":\"60\",\r\n\"promoid\":\"15\",\r\n\"tenure\":24,\r\n\"supplier_code\":\"28431\",\r\n\"marginmoney\":1000000,\r\n\"productSku\":\"3087799\",\r\n\r\n\"offerScheme\": \"182\",\r\n\"assetcost\":1500000,\r\n\"isSupplierEditable\":true}],\r\n\"customerProfile\":[\r\n{\r\n\"partnerCustomerIdentifier\":877709,\r\n\"bankingDetails\":[],\r\n\"liability\":[],\r\n\"employmentInfo\":[\r\n{\r\n\"employmentType\":\"Salaried\",\r\n\"employerName\":\"marurrvtiprints\",\r\n\"annualGrossSalary\":29000000\r\n}\r\n]\r\n}\r\n],\r\n\"incomeDetails\":[],\r\n\"reference\":[\r\n{\r\n\"referenceRelationToCustomer\":\"FRIEND\",\r\n\"referenceTitle\":\"Mr\",\r\n\"referenceFirstName\":\"AKSHAY\",\r\n\"referenceMiddleName\":\"RAJESH\",\r\n\"referenceLastName\":\"PATEL\",\r\n\"referenceMobilePhoneNumber\":\"6158598867\",\r\n\"address\":[]\r\n},\r\n{\r\n\"referenceRelationToCustomer\":\"FRIEND\",\r\n\"referenceTitle\":\"Mr\",\r\n\"referenceFirstName\":\"AJHCUXI\",\r\n\"referenceMiddleName\":\"sofgar\",\r\n\"referenceLastName\":\"paldgffg\",\r\n\"referenceMobilePhoneNumber\":\"6720075862\",\r\n\"address\":[]\r\n}\r\n],\r\n\"offers\":[],\r\n\"surrogateInfo\":[],\r\n\"consumerConsent\":null\r\n}\r\n"
+		},
+		{
+			"id": "9b94b1dd-d941-53a8-0a2d-7cdb4728e303",
+			"headers": "Content-Type: application/json\nsvc_name: CREATELOAN\nsource: TWonline\nenvironment: QA\nAuthorization: Basic SWRmY2ZpcnN0bG1zOklkZmMkIzEyMzU=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "svc_name",
+					"value": "CREATELOAN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "source",
+					"value": "TWonline",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "environment",
+					"value": "QA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic SWRmY2ZpcnN0bG1zOklkZmMkIzEyMzU=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://muleuat.capitalfirst.com:8444/api/1.0/exp/idfc/inbound",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1611302170818,
+			"name": "QA Create",
+			"description": "",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"responses": [],
+			"rawModeData": "{\"requestHeaderSource\":\"Twonline\",\"svcName\":\"CREATELOAN\",\"partnerName\":\"Bike_Dekho\",\"location\":\"MUMBAI\",\"lob\":\"TW\",\"createdBy\":\"Customer\",\"loanSource\":\"TWonline\",\"customerProfile\":[{\"partnerCustomerIdentifier\":\"\",\"gender\":\"Male\",\"maritalStatus\":\"Married\",\"firstName\":\"Rakesh\",\"lastName\":\".\",\"fatherFirstName\":\"\",\"fatherLastName\":\"\",\"applicantType\":\"Applicant\",\"mobileNumber\":\"6014302354\",\"emailId\":\"7712332177@bikedekho.com\",\"dateOfBirth\":\"08-08-1991\",\"bankingDetails\":[],\"identifier\":[{\"type\":\"PAN\",\"value\":\"BTIPP3485M\"}],\"address\":[{\"addressLine1\":\"test\",\"addressLine2\":\"test\",\"pincode\":\"395017\",\"addressType\":\"RESIDENCE ADDRESS\",\"propertyStatus\":\"R\"}],\"employmentInfo\":null,\"incomeDetails\":[]}],\"reference\":[],\"offers\":[],\"documents\":[],\"consumerConsent\":null,\"campaignDetails\":null}"
+		},
+		{
+			"id": "9db9abf0-e941-8b29-45b3-eb0abf3d97fe",
+			"headers": "Content-Type: application/json\nuser_name: cflintegration\nsvc_name: CheckApplicationStatus\npassword: sdfvklj40934tsdlvjk309sd\nsource: TWonline\nenvironment: UAT\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user_name",
+					"value": "cflintegration",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "svc_name",
+					"value": "CheckApplicationStatus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "sdfvklj40934tsdlvjk309sd",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "source",
+					"value": "TWonline",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "environment",
+					"value": "UAT",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://muleuat.capitalfirst.com:8443/uatapigateway/sfdc_inbound_api",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1599022001883,
+			"name": "IFBQA Check Status",
+			"description": "",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"responses": [],
+			"rawModeData": "{ \"id\":\"70327477104\" }",
+			"collection_id": "f0941cff-aac2-6903-c0d6-e3ed239984ce"
+		},
+		{
+			"id": "a193f131-e75e-3416-3a6a-0fafe39714ae",
+			"headers": "Content-Type: application/json\nsvc_name: CheckApplicationStatus\nsource: TWonline\nenvironment: QA\nAuthorization: Basic SWRmY2ZpcnN0bG1zOklkZmMkIzEyMzU=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "svc_name",
+					"value": "CheckApplicationStatus",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "source",
+					"value": "TWonline",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "environment",
+					"value": "QA",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic SWRmY2ZpcnN0bG1zOklkZmMkIzEyMzU=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://muleuat.capitalfirst.com:8444/api/1.0/exp/idfc/inbound",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1611050228821,
+			"name": "QA Check Status",
+			"description": "",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"responses": [],
+			"rawModeData": "{ \"id\":\"90328499471\" }"
+		},
+		{
+			"id": "b1a4d308-847e-02ea-47e1-3c78ab7f54e8",
+			"headers": "Content-Type: application/json\nuser_name: cflintegration\nsvc_name: CREATELOAN\npassword: sdfvklj40934tsdlvjk309sd\nsource: TWonline\nenvironment: IFBQA_ORG1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "user_name",
+					"value": "cflintegration",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "svc_name",
+					"value": "CREATELOAN",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "sdfvklj40934tsdlvjk309sd",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "source",
+					"value": "TWonline",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "environment",
+					"value": "IFBQA_ORG1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://muleuat.capitalfirst.com:8443/uatapigateway/sfdc_inbound_api",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"data": [],
+			"dataMode": "raw",
+			"name": "IFBQA CReate",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1583490776241,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\r\n\"svcName\": \"CREATELOAN\",\r\n\"partnerName\": \"Bike Dekho\",\r\n\"location\": \"MUMBAI\",\r\n\"lob\": \"TW\",\r\n\"createdBy\": \"\",\r\n\"loanSource\": \"\",\r\n\"customerProfile\": [{\r\n\"partnerCustomerIdentifier\": \"\",\r\n\"gender\": \"Male\",\r\n\"maritalStatus\": \"Single\",\r\n\"firstName\": \"KAUSHALya\",\r\n\"lastName\": \"SINGH\",\r\n\"fatherFirstName\": \"Prannath\",\r\n\"fatherLastName\": \"Yadav\",\r\n\"applicantType\": \"Applicant\",\r\n\"mobileNumber\": \"9960260240\",\r\n\"emailId\": \"manaldasd@gmail.com\",\r\n\"dateOfBirth\": \"11-07-1980\",\r\n\"bankingDetails\": [],\r\n\"identifier\": [{\r\n\"type\": \"Aadhaar\",\r\n\"value\": \"967523122228\"\r\n}],\r\n\"address\": [{\r\n\"addressLine1\": \"kanjura\",\r\n\"addressLine2\": \"caves no 1\",\r\n\"pincode\": \"400082\",\r\n\"addressType\": \"RESIDENCE ADDRESS\",\r\n\"propertyStatus\": \"R\"\r\n}],\r\n\"employmentInfo\": null,\r\n\"incomeDetails\": []\r\n}],\r\n\"reference\": [],\r\n\"offers\": [],\r\n\"documents\": [],\r\n\"consumerConsent\": null,\r\n\"campaignDetails\": null\r\n}\r\n",
+			"collection_id": "f0941cff-aac2-6903-c0d6-e3ed239984ce"
+		},
+		{
+			"id": "d3120558-6081-cbb7-9ded-f9dece9e0dbe",
+			"headers": "",
+			"headerData": [],
+			"url": "",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1588152737955,
+			"name": "dumy data set",
+			"description": "",
+			"collectionId": "f0941cff-aac2-6903-c0d6-e3ed239984ce",
+			"responses": [],
+			"rawModeData": "\t\t\"productSku\": \"2032140\",\n\t\t\"model\": \"1985694\"\n\t\t\"make\": \"1985693\"\n\t\t\"requestHeaderSource\": \"Bike_Dekho\",\t\t\n\nHIGH end ---\t\t\n\t\t\n\t\t[{\n\t\t\"itemIdentifier\": \"TW\",\n\t\t\"offerScheme\": \"182\",\n\t\t\"productSku\": 1985694,\n\t\t\"productQty\": 1,\n\t\t\"brand\": 1117,\n\t\t\"AssetGroup\": \"59\",\n\t\t\"assetCost\": 300000,\n\t\t\"marginMoney\": 20000\n  }],\n  \nNIP ----  \n  [{\n\t\t\"itemIdentifier\": \"TW\",\n\t\t\"offerScheme\": \"175\",\n\t\t\"productSku\": 2005701,\n\t\t\"productQty\": 1,\n\t\t\"brand\": 1111,\n\t\t\"AssetGroup\": \"56\",\n\t\t\"assetCost\": 70000,\n\t\t\"marginMoney\": 20000\n  }],\n  \n  employment section\n  \n  {\n          \"employmentType\": \"Salaried\",\n          \"employerName\": \"rajas prints\",\n          \"annualGrossSalary\": 3500000,\n          \"yearsAtCurrentCompany\": \"4\",\n          \"monthsAtCurentCompany\": \"4\",\n          \"totalYearsOfWorkExp\": \"4\",\n          \"totalMonthsofWorkExp\": \"4\"\n        }\n        \nAddress section \n  {\n\t\t\"addressLine1\": \"vanita\",\n\t\t\"addressLine2\": \"pESHA park\",\n\t\t\"addressLine3\": \"\",\n        \"landmark\": \"\",\n\t\t\"pincode\": \"400060\",\n\t\t\"addressType\": \"OFFICE ADDRESS\",\n\t\t\"propertyStatus\": \"O\",\n\t\t\"mailingAddress\": \"YES\"\n\t},\n\t{\n        \"addressType\": \"PERMANENT ADDRESS\",\n        \"addressLine1\": \"vanita\",\n\t\t\"addressLine2\": \"pESHA park\",\n        \"addressLine3\": \"\",\n        \"landmark\": \"\",\n        \"pincode\": \"400060\",\n        \"propertyStatus\": \"O\",\n        \"mailingAddress\": \"NO\"\n    }\n  ",
+			"collection_id": "f0941cff-aac2-6903-c0d6-e3ed239984ce"
+		}
+	]
+}

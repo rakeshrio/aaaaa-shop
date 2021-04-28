@@ -136,8 +136,8 @@
                                             <!-- <div class="col-md-5 col-6">
                                                 <button class="btun1" @click.prevent="step--">Previous</button>
                                             </div> -->
-                                            <div class="col-md-5 col-6">
-                                                <button class="btun2" @click="submit"  :disabled="watchsendingrequest">Apply Now</button>
+                                            <div class="col-md-6 col-6">
+                                                <button class="_2iiQB _3qpfi" @click="submit"  :disabled="error">Apply Now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -308,7 +308,7 @@ export default {
   },
      computed:{
      error(){
-         if(this.fullname ==""||this.mobile==""||this.know_two_wheeler==""||this.aadhar_card==""||this.pancard ==""||this.dob==""||this.gender==""||this.city==""||this.year_of_purchase==""||this.registration_no==""){
+         if(this.fullname ==""&&this.mobile==""&&this.know_two_wheeler==""&&this.fullname==""){
              return true
          }else{
              return false
@@ -325,6 +325,9 @@ export default {
 <style scoped>
 .displaymob{
     display: none;
+}
+disabled{
+    opacity:0.6  !important
 }
 @font-face {
   font-family: Gilroyf;
@@ -359,6 +362,7 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
   /* min-height:600px */
 
 }
+
 .btun1 {
 
     height:30px;
@@ -378,17 +382,31 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
     -webkit-box-shadow: 0 4px 8px 0 rgba(237,108,13,.5);
     box-shadow: 0 4px 8px 0 rgba(237,108,13,.5);
 }
+._3qpfi {
+    color: #fff;
+    font-weight: 700;
+  background: #6200ED;
+    font-size: 16px;
+    letter-spacing: .4px;
+}
+
+._3qpfi:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
 .btun2 {
 
-    height:30px;
+
     padding: 0.2rem;
     border-radius: 12px;
-    background:#ff6000;
+    background:#6300ED;
     letter-spacing: 1px;
     font-weight: 700;
     text-align: center;
     display: block;
     width: 100%;
+
     text-transform: uppercase;
     border: none;
     color:white;
@@ -408,14 +426,6 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
 }
 
 
-._3qpfi {
-    color: #fff;
-    font-weight: 700;
-   
-    background-image: linear-gradient(261deg,#f69b12,#ed6a10);
-    font-size: 16px;
-    letter-spacing: .4px;
-}
 
 ._2iiQB {
     position: relative;
@@ -430,6 +440,7 @@ input[type=date]:required:invalid::-webkit-datetime-edit {
     outline: none;
     -webkit-box-shadow: 0 4px 8px 0 rgba(237,108,13,.5);
     box-shadow: 0 4px 8px 0 rgba(237,108,13,.5);
+    border-radius:5px
 }
 .xcv {
     width: 202px;

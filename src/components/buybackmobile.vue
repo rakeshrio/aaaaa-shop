@@ -107,7 +107,7 @@
                                 <p class="text-center pb-1"  style="color:red" v-if="message">{{message}}</p>
                             </div>
                                 <div class="col-12 text-center xcv mt-3"  v-if="!success">
-                                    <button  type="button" class="btn  _2iiQB _3qpfi text-center"  style="cursor:pointer" :disabled="watchsendingrequest" @click="submit" >
+                                    <button  type="button" class="btn  _2iiQB _3qpfi text-center"  style="cursor:pointer" :disabled="error" @click="submit" >
                                         <!-- <span v-if="loading">Loading...</span>
                                         <span v-else>Submit</span> -->
                                         Submit

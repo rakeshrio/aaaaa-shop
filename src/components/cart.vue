@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 m-0 mt-3 p-0" style="background:white">`
-                  `
+                  
                     <div class="col-md-12 row p-4">
                         <div class="col-md-2 m-0 p-0 col-2">
                             <img class="wid " src="../assets/corona.png" alt="" >

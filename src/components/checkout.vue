@@ -1,46 +1,288 @@
 <template>
-  <div class="col-md-12 m-0 mb-5 p-0" style="">
-      <div class="col-md-12 row">
-          <div class="col-md-8">
+  <div class="col-md-12 m-0  p-0" style="font-family:gilroy">
+      <div class="web">
+        
+        <div class="col-md-12 navbar py-4 m-0 p-0">
+            <div class="col-md-8  m-auto row justify-content-between">
+                <div>
+                    <img src="https://on-track.in/wp-content/uploads/2018/10/logo.svg" alt="">
+                </div>
+                <div class="d-flex">
+                    <p class="mb-0 mt-1" :class="{'ifselected':step == 1}">Bag  </p>
+                     <p class="mb-0 mt-1 px-3"> ----- </p>
+                    <p class="mb-0 mt-1" :class="{'ifselected':step == 2}"> Address  </p>
+                        <p class="mb-0 mt-1 px-3"> ----- </p>
+                    <p class="mb-0 mt-1" :class="{'ifselected':step == 3}"> Payment </p>
+                </div>
+                <div>
+                    <p class="mb-0"><span><img class="mr-2" src="../assets/shield.png" alt="" width="25px" height="100%"></span> 100% Secure</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 m-0 p-0 py-1" style="background:#4e44d8; color:white; font-family:gilroyf; font-size:14px">
+            As per govt guidelines, we are following all the protocols regarding sanitization
+        </div>
+        
+<div class="col-md-12 m-0 p-0" style="background:#F3F2FA;border: 1px solid #eaeaec;">
+            <div class="col-md-8 py-4 m-auto row p-0" >
+                <div class="col-md-5 mt-2">
+                    <div class="col-md-12 my-2   m-0 p-0" style="background:#FFF1EC;border: 1px solid #eaeaec;">
+                        <div class="col-md-12 p-0 p-2 m-0 row justify-content-between">
+                            <div>
+                                <h6 class="mb-0 " style="font-family:gilroyf; font-size:px">{{ cartdata[0].make_model }}</h6>
+                            </div>
+                            <div>
+                                <p  class="mb-4" style="font-size:12px">{{cartdata[0].selectedItem.color}}, {{ cartdata[0].selectedItem.variant }} Variant</p>
+                            </div>
+                        </div>
+                        <img :src="cartdata[0].selectedItem.image" alt="" width="70%">
+                    </div>
+                    <div class="col-12 m-0 py-1 p-0 mb-5" style="background:white;border: 1px solid #eaeaec;">
+                        <p class="ml-3 mb-2 mt-1 text-left" style="font-family:gilroyf">Order Summary</p>
+                        <hr class="mx-3 p-0 m-0 my-2 mb-3">
+                        <div class="col-md-12 row m-0 p-0 mt-3"  v-if="currentSelected[0].additional_cost.length>1">
+                            
+                            <div class="col-md-12 col-12 d-flex" style="justify-content:space-between"  v-for="(data, index) in currentSelected[0].additional_cost" :key="index">
+                                <P class="mb-2" style="font-family:gilroy">{{ data.name }} </P>
+                                <p class="mb-2" style="font-family:gilroy; font-size:13px">{{ data.price | currency }}</p>
+                            </div>
+                            <div class="col-md-12 col-12 d-flex" style="justify-content:space-between" v-for="(data, index) in cartdata[0].addons" :key="index">
+                                <P class="mb-2" style="font-family:gilroy">{{ data.name }} </P>
+                                <p class="mb-1" style="font-family:gilroy; font-size:13px">{{ data.description  }}</p>
+                            </div>
+                            <div class="col-md-12 mt-1 col-12 d-flex" style="justify-content:space-between;  color:">
+                                <P class="mb-2" style="font-family:gilroy">Convenience Fee</P>
+                                <p class="mb-1" style="font-family:gilroy">{{convenienceAmount | currency}}</p>
+                            </div>  
+                        </div>   
+                        <hr class="mx-3 p-0 m-0 my-2 mb-3">
+                        <div class="col-md-12  col-12 d-flex" style="justify-content:space-between;font-family:gilroyf"  >
+                            <P class="mb-1" style="font-family:gilroyf">Your Total</P>
+                            <p class="mb-1" style="font-family:gilroyf; font-size:13px">{{checkOutPrice | currency}}</p>
+                        </div>   
+                        <!-- <div class="col-md-12 mt-2 col-12" >
+                                <p class="mb-1"><span class="badge badge-danger">{{booking_type.booking_type}}</span></p>
+                                <p class="badge">Amount payable at store {{priceToPayAtStore | currency}} at the 	time of delivery</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-7 p-0 mt-3">
+                    <div class="col-md-12 m-0 mb-3 py-2 p-0 " style="background:white;border: 1px solid #eaeaec;">
+                        <div class="col-md-12 mb-2 pl-4 m-0 row justify-content-between">
+                            <div>
+                                <P class="mb-0" style="font-family:gilroyf">Add Address</P>
+                            </div>
+                            <div v-if="step==3 || step==2" style="cursor:pointer">
+                                <p @click="step--"><img class="mr-4" src="../assets/backarrow.png" alt="" width="25px" height="auto"></p>
+                            </div> 
+                        </div>
+                        <hr class="m-0 p-0">
+                            <div class="m-0 p-0 my-4" v-if="step==1 ">
+                                <div class="form-row mx-3 my-3" >
+                                    <div class="form__group mb-3 col-md-6 col-12">
+                                        <input type="text" v-model="first_name" class="form__input" id="name" placeholder="First Name" required="" />
+                                        
+                                    </div>
+                                    <div class="form__group mb-3 col-md-6 col-12">  
+                                        <input type="text" v-model="last_name" class="form__input" id="inputPassword4" placeholder="Last name">
+                                    </div>
+                                    <div class="form__group  col-md-6 col-12">    
+                                        <input type="number" v-model="phone_number" placeholder="Mobile" class="form__input" id="inputZip">    
+                                    </div>
+                                    <div class="form__group mb-3   col-md-6 col-12"> 
+                                        <input type="email" v-model="email"  class="form__input" placeholder="Email Address" > 
+                                    </div>
+                                    <div class="col-md-4 ml-1 bv py-2" @click="step++" :disabled=error1 style="background:#6200EE;color:white;border:none; border-radius:3px; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);" >
+                                        <button   style="background:#6200EE;color:white;border:none; font-family:gilroyf" >Continue</button>
+                                    </div>         
+                                </div>
+                            </div>
+                            <div class="m-0 p-0" v-if="step==2 ">
+                                <div class="form-row my-3 mx-2" >
+                                    <div class="form__group col-md-6 mb-3  col-12">    
+                                        <input type="text" v-model="street_address"  class="form__input" placeholder="Street Address">
+                                        
+                                    </div>
+                                    <div class="form__group col-md-6 mb-3  col-12">                                   
+                                        <input type="text" v-model="city"  class="form__input" id="inputZip" placeholder="City/Town">
+                                    </div>
+                                    <div class="form__group  col-md-6 mb-   col-12">
+                                        <input type="text" v-model="state"  class="form__input" id="inputZip" placeholder="State">
+                                    </div>
+                                    <div class="form__group mb- col-md-6 mb-  col-12">    
+                                        <input type="number" v-model="post_code"  class="form__input" id="inputZip" placeholder="Pincode">
+                                    </div>
+                                    <div class="col-md-4 ml-1 bv mt-3 py-2" style="background:#6200EE;color:white;border:none; border-radius:3px" >
+                                        <button @click="step++"  style="background:#6200EE;color:white;border:none; font-family:gilroyf">Continue</button>
+                                    </div>                   
+                                </div>  
+                            </div>
+                            <div class="m-0 p-0" v-if="step==3">
+                            <div class="form-row mx-3 my-3 " >
+                                <div class="col-md-12 my-2">
+                                    <label for="rto" class="labe" >
+                                        <input type="checkbox" id="rto" v-model="rtoSameAsDelivery">
+                                        RTO Address Same As Delivery Address
+                                    </label>
+                                </div>
+                                <div class="form__group  col-md-6 mb-3   col-12">                                  
+                                    <input type="text" v-model="rto_street_address"  class="form__input" id="inputZip" placeholder="Street Address">
+                                </div>
+                                <div class="form__group   col-md-6 mb-3  col-12">
+                                    <input type="text" v-model="rto_city"  class="form__input" id="inputZip" placeholder="City/Town">
+                                </div>
+                                <div class="form__group   col-md-6 mb-3 col-12">
+                                    <input type="text" v-model="rto_state"  class="form__input" id="inputZip" placeholder="State">
+                                </div>
+                                <div class="form__group  mb-3 col-md-6 mb-3  col-12">                                   
+                                    <input type="number" v-model="rto_post_code"  class="form__input" id="inputZip" placeholder="Pincode">
+                                </div> 
+                                <div class=" col-md-6 py-3 col-12 m-0 px-2 text-center " style="; background:white; border:none;   ">
+                                  <div class="col-12 py-2 bv" style="background:#FF3F6C;color:white;border:none; border-radius:3px; box-shadow: 0 -1px 4px 0 rgb(0 0 0 / 15%); ">
+                                    <button @click="placeOrder"  style="background:#FF3F6C;color:white;border:none">Place Order</button>
+                                    </div>
+                                </div>  
+                            </div>
+                            </div> 
 
-              <div class="col-md-12  text-left m-3 p-2 " style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
-                    <div class="col-md-12 mt-2 mb-5">
-                        <h3 class="mb-2" style="font-family:gilroyf; color:#1976D2">My Order</h3>
-                        <hr class="mb-5">
-                        <div class="col-md-12 py-3 mb-3" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
-                            <span><img src="../assets/number-one.png" alt="" class="widt" height="auto"><strong class="ml-3"> Customer</strong></span> 
-                            <div class="form-row cvbb my-3" v-if="step==1">
-    
-                                <div class="form__group mb-3 col-md-6 col-12">
-                                    <input type="text" v-model="first_name" class="form__input" id="name" placeholder="Full name" required="" />
-                                    
-                                </div>
-                                <div class="form__group mb-3 col-md-6 col-12">  
-                                    <input type="text" v-model="last_name" class="form__input" id="inputPassword4" placeholder="Last name">
-                                   
-                                </div>
-                                <div class="form__group mb-3 col-md-6 col-12">
-                                    
-                                    <input type="number" v-model="phone_number" placeholder="Pincode" class="form__input" id="inputZip">
-                                    
-                                </div>
-                                <div class="form__group mb-3   col-md-6 col-12">
-                                    
-                                    <input type="email" v-model="email"  class="form__input" placeholder="Email Address" >
-                                    
-                                </div>
-                                <div class="col-md-4  ml-2 p-2 text-center" style="background:#4e44e8">
-                                    <button @click="next" style="background:#4e44e8;color:white;border:none">Next</button>
-                                </div>
-                                
+                           
+                
+                    </div>
+                    <div class="col-md-12 m-0 mt-3 p-0" style="background:white;border: 1px solid #eaeaec;">
+                    <div class="col-md-12 row p-4">
+                        <div class="col-md-2 m-0 p-0 col-2">
+                            <img class="wid" src="../assets/time.png" alt="" >
+                        </div>
+                        <div class="col-md-10 col-10 text-left ">
+                            <p class="mb-0" style="font-family:gilroyf">48 hrs commitment Promise</p>
+                            <P class="mb-0" style="font-family:gilroy">Vehicles delivered within the promised time. </P>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 m-0 mt-3 p-0" style="background:white;border: 1px solid #eaeaec;">
+                    <div class="col-md-12 row p-4">
+                        <div class="col-md-2 col-2 m-0 p-0">
+                            <img class="wid" src="../assets/truck.png" alt="" >
+                        </div>
+                        <div class="col-md-10 col-10 text-left ">
+                            <p class="mb-0" style="font-family:gilroyf">FREE STANDARD DELIVERY</p>
+                            <P class="mb-0" style="font-family:gilroy">Faster delivery options are available for local Zones.</P>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 m-0 py-2 p-0" style="bottom:0 !important; background:#E6E6E6">
+            <div class="col-md-8 m-auto row justify-content-between">
+                <div>
+                    <img src="../assets/visa.png" alt="">
+                </div>
+                <div > 
+                    <p class="mb-0 mt-4" style="font-family:gilroy !important; font-size:14px;; cursor:pointer">Need Help ? Contact Us</p>
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+<!-- mob -->
+
+
+
+      <div class="mob col-12 m-0 p-0">
+       <div class="col-md-12 col-12 m-0 pl-3 py-3 navbar p-0 text-left" style="box-shadow: 0 1px 2px 0 rgb(148 150 159 / 30%); ">
+          <p class="mb-0" style="font-size:14px; font-family:gilroyf"><span><img class="mr-4" src="../assets/backarrow.png" alt="" width="16px" height="auto"></span>CHECKOUT</p>
+       </div>
+        <div class="col-md-12 col-12 m-0 p-0">
+            <div class="col-12 m-0 p-2" style="background:#F8F2E2">
+                <p class="text-left pl-2 mb-3" style="font-size:12px">ORDER SUMMARY</p>
+                <div class="col-12 m-0 p-0 row">
+                    <div class="col-4 m-0 p-0">
+                        <img :src="cartdata[0].selectedItem.image" alt="" width="100%">
+                    </div>
+                    <div class="col-8 text-left pl-2 m-0 p-0">
+                        <h6 class="mb-0 " style="font-family:gilroyf; font-size:px">{{ cartdata[0].make_model }}</h6>
+                        <p  class="mb-4" style="font-size:12px">{{cartdata[0].selectedItem.color}}, {{ cartdata[0].selectedItem.variant }} Variant</p>
+                        <p style="font-size:10px">Estimated Delivery, Thur 29 Apr 2021</p>
+                    </div>
+                </div>
+             
+            </div>
+            <div class="row col-12 m-0 px-3 py-2" style="justify-content:space-between !important;font-size:12px; background:#f4f4f5">
+                        <p class="mb-0 mt-1">Total amount to pay</p>
+                        <p style="font-family:gilroyf; font-size:13px !important">{{checkOutPrice | currency}}</p>
+            </div>
+            <h6 class="text-left pl-3 mt-2 my-3" style="font-family:gilroyf">Price Details</h6>
+            <hr class="mx-3 m-0 p-0">
+            <div class="col-12 m-0 p-0  ">
+                <div class="col-md-12 row m-0 p-0 mt-3"  v-if="currentSelected[0].additional_cost.length>1">
+                            <div class="col-md-12 col-12 d-flex" style="justify-content:space-between"  v-for="(data, index) in currentSelected[0].additional_cost" :key="index">
+                                <P class="mb-2" style="font-family:gilroy">{{ data.name }} </P>
+                                <p class="mb-2" style="font-family:gilroy; font-size:13px">{{ data.price | currency }}</p>
                             </div>
                             
-                        </div>
-              
-                        <div class="col-md-12 py-3 mb-3" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
-                            <span><img src="../assets/number-2.png" alt="" class="widt"  height="auto"> <strong class="ml-3"> Shipping</strong></span>
+                            <div class="col-md-12 col-12 d-flex" style="justify-content:space-between" v-for="(data, index) in cartdata[0].addons" :key="index">
+                                <P class="mb-2" style="font-family:gilroy">{{ data.name }} </P>
+                                <p class="mb-1" style="font-family:gilroy; font-size:13px">{{ data.description  }}</p>
+                            </div>
+                            <div class="col-md-12 mt-1 col-12 d-flex" style="justify-content:space-between;  color:">
+                                <P class="mb-2" style="font-family:gilroy">Convenience Fee</P>
+                                <p class="mb-1" style="font-family:gilroy">{{convenienceAmount | currency}}</p>
+                            </div> 
                             
-                            <div class="form-row my-3 cvbb" v-if="step==2">
+                        </div>   
+                        <hr class="mx-3 p-0 m-0 my-2 mb-3">
+                        <div class="col-md-12  col-12 d-flex" style="justify-content:space-between;font-family:gilroyf"  >
+                            <P class="mb-1" style="font-family:gilroyf">Your Total</P>
+                            <p class="mb-1" style="font-family:gilroyf; font-size:13px">{{checkOutPrice | currency}}</p>
+                        </div>   
+                        <!-- <div class="col-md-12 mt-2 col-12" >
+                                <p class="mb-1"><span class="badge badge-danger">{{booking_type.booking_type}}</span></p>
+                                <p class="badge">Amount payable at store {{priceToPayAtStore | currency}} at the 	time of delivery</p>
+                        </div>    -->
+            </div>
+            <div class="col-12 py-2  d-flex" style="background:#F4F4F5; justify-content:space-between !important">
+                <div>
+                    <p>Add Address</p>
+                </div>
+                <div v-if="step==3 || step==2">
+                    <p @click="step--"><img class="mr-4" src="../assets/backarrow.png" alt="" width="16px" height="auto"></p>
+                </div>            
+            </div>          
+                            <div class="m-0 p-0" v-if="step==1 ">
+                                <div class="form-row mx-3 my-3" >
+                                    <div class="form__group mb-3 col-md-6 col-12">
+                                        <input type="text" v-model="first_name" class="form__input" id="name" placeholder="First Name" required="" />
+                                        
+                                    </div>
+                                    <div class="form__group mb-3 col-md-6 col-12">  
+                                        <input type="text" v-model="last_name" class="form__input" id="inputPassword4" placeholder="Last name">
+                                    </div>
+                                    <div class="form__group mb-3 col-md-6 col-12">    
+                                        <input type="number" v-model="phone_number" placeholder="Mobile" class="form__input" id="inputZip">    
+                                    </div>
+                                    <div class="form__group mb-5   col-md-6 col-12"> 
+                                        <input type="email" v-model="email"  class="form__input" placeholder="Email Address" > 
+                                    </div>         
+                                </div>
+                                <div class="py-3 col-12 m-0 px-4 text-center " style="position:fixed !important; bottom:0; background:white; border:none; box-shadow: 0 -1px 4px 0 rgb(0 0 0 / 15%);  border-top: 1px solid #f6f6f6;">
+                                  <div class="col-12 py-2" style="background:#6200EE;color:white;border:none; " >
+                                    <button @click="step++"  style="background:#6200EE;color:white;border:none">Continue</button>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="m-0 p-0" v-if="step==2 ">
+                            <div class="form-row my-3 mx-2" >
                                 <div class="form__group col-md-6 mb-3  col-12">    
                                     <input type="text" v-model="street_address"  class="form__input" placeholder="Street Address">
                                     
@@ -51,102 +293,58 @@
                                 <div class="form__group  col-md-6 mb-3   col-12">
                                     <input type="text" v-model="state"  class="form__input" id="inputZip" placeholder="State">
                                 </div>
-                                <div class="form__group  col-md-6 mb-3  col-12">    
+                                <div class="form__group mb-5 col-md-6 mb-3  col-12">    
                                     <input type="number" v-model="post_code"  class="form__input" id="inputZip" placeholder="Pincode">
-                                </div>
-                                <div class="col-md-4 p-2 text-center" style="background:#4e44e8">
-                                    <button @click="next" style="background:#4e44e8;color:white;border:none">Next</button>
-                                </div>
-                            </div>  
-                               
-                        </div>
-                   
-                        <div class="col-md-12 py-3" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
-                            <span><img src="../assets/number-3.png" alt="" class="widt"  height="auto"> <strong class="ml-3"> RTO</strong></span>
-                            <div class="form-row my-3 cvbb" v-if="step==3">
+                                </div>                  
+                            </div>
+                                <div class="py-3 col-12 m-0 px-4 text-center " style="position:fixed !important; bottom:0; background:white; border:none; box-shadow: 0 -1px 4px 0 rgb(0 0 0 / 15%);  border-top: 1px solid #f6f6f6;">
+                                  <div class="col-12 py-2" style="background:#6200EE;color:white;border:none; ">
+                                    <button @click="step++" style="background:#6200EE;color:white;border:none">Continue</button>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="m-0 p-0" v-if="step==3">
+                            <div class="form-row mx-3 my-3 " >
                                 <div class="col-md-12 my-2">
-                                    <label for="" class="labe" >
-                                        <input type="checkbox" v-model="rtoSameAsDelivery">
+                                    <label for="rto" class="labe" >
+                                        <input type="checkbox" id="rto" v-model="rtoSameAsDelivery">
                                         RTO Address Same As Delivery Address
                                     </label>
                                 </div>
-                                <div class="form__group col-md-6 mb-3   col-12">                                  
+                                <div class="form__group  col-md-6 mb-3   col-12">                                  
                                     <input type="text" v-model="rto_street_address"  class="form__input" id="inputZip" placeholder="Street Address">
                                 </div>
-                                <div class="form__group col-md-6 mb-3  col-12">
+                                <div class="form__group   col-md-6 mb-3  col-12">
                                     <input type="text" v-model="rto_city"  class="form__input" id="inputZip" placeholder="City/Town">
                                 </div>
-                                <div class="form__group  col-md-6 mb-3 col-12">
+                                <div class="form__group   col-md-6 mb-3 col-12">
                                     <input type="text" v-model="rto_state"  class="form__input" id="inputZip" placeholder="State">
                                 </div>
-                                <div class="form__group  col-md-6 mb-3  col-12">                                   
+                                <div class="form__group  mb-5 col-md-6 mb-3  col-12">                                   
                                     <input type="number" v-model="rto_post_code"  class="form__input" id="inputZip" placeholder="Pincode">
-                                </div>
-                               
+                                </div> 
                             </div>
-                            
-                        </div>
+                                <div class="py-3 col-12 m-0 px-4 text-center " style="position:fixed !important; bottom:0; background:white; border:none; box-shadow: 0 -1px 4px 0 rgb(0 0 0 / 15%);  border-top: 1px solid #f6f6f6;">
+                                  <div class="col-12 py-2" style="background:#FF3F6C;color:white;border:none; ">
+                                    <button @click="placeOrder"  style="background:#FF3F6C;color:white;border:none; ">Place Order</button>
+                                    </div>
+                                </div>  
+                            </div>                
+            </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
       
-        
-                    </div>
-              </div>
-          </div>
-          <div class="col-md-4 " >
-                <div class="col-md-12 m-3 p-3 " style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
-                    <h1 class="font2  text-left" style=""> Order Details</h1>
-                    <div class="col-md-12">
-                        <img :src="cartdata[0].selectedItem.image"
-                        alt=""
-                        width="80%">
-                    </div>
-                    <table class="table table-bordered" style="box-shadow: 0 1px 12px rgba(51,51,51,.12941)!important; border-radius:10px">
-                        <thead>
-                            <tr class="text-left">
-                            <th scope="col">Product</th>
-                            <th scope="col">Total</th>
-                        
-                            </tr>
-                        </thead>
-                        <tbody class="text-left" >
-                            <tr >
-                                <th scope="row">{{cartdata[0].make_model}}  {{cartdata[0].variant}}  
-                                </th>
-                                <td>{{checkOutPrice - convenienceAmount | currency}}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                <span v-if="booking_type"> Convenience Charge (3%) </span>
-                                <span v-else>(Booking Charge)</span>
-                                </th>
-                                <td>{{convenienceAmount | currency}}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                <span v-if="booking_type"> Total</span>
-                                <span v-else>(Booking Charge)</span>
-                                </th>
-                                <td>{{checkOutPrice | currency}}</td>
-                            </tr>
-                            <!-- <tr>
-                                <th scope="row">Subtotal</th>
-                                <td>₹ {{cartdata.price}}</td>
-                            </tr> -->
-                            <!-- 
-                            <tr>
-                                <th scope="row">Total</th>
-                                <td>₹ {{cartdata.price}}</td>
-                            </tr> -->
-                        </tbody>
-                    </table>
-                    <p style="color:red; font-size:12px" class="mb-3" v-if="!valid"> * Please fill all the fields.</p>
-                    <div class="col-md-12  text-center" @click="placeOrder" :disabled="!valid"  style="cursor:pointer;border:none; background:#4CAF50;border-color: #4caf50 !important;box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%); color:white;font-weight:500;letter-spacing:1px">
-                        <span><i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:21px"></i></span>
-                        <button class="px-3 py-2 "  style="color:white;background:#4CAF50;border:none;font-size:18px; letter-spacing:1px"  ><strong>Place Order</strong></button>
-                    </div>
-                </div>
-                    
-          </div>
-      </div>
   </div>
 </template>
 
@@ -175,7 +373,8 @@ export default {
             rtoSameAsDelivery :false,
             message:'',
             booking_type:[],
-            step:1
+            step:1,
+            currentSelected: [],
         }
     },
  
@@ -184,6 +383,14 @@ export default {
         next(){
             this.step++
         },
+
+        newdatee(){
+             var dt = new Date();
+          console.log(dt.setDate(dt.getDate() + 3))
+          
+        },
+       
+
         prev(){
            this.step-- 
         },
@@ -325,6 +532,22 @@ created(){
     this.booking_type = this.$route.query
     }
      
+    axios
+      .get(
+        "https://ontrack-backend-express-v1.herokuapp.com/api/otr_models/model-data-with-dealer/" +
+          this.$route.params.id
+        )
+      .then((result) => {
+        this.vehicle = result.data;
+        // this.variantsList = _.uniqBy(this.vehicle.superset, "variant");
+        this.currentImage = this.vehicle.hero_image;
+        this.currentSelected.push(this.vehicle.superset[0]);
+        this.loading = false;
+      })
+      .catch((error) => {
+        throw new Error(`API ${error}`);
+      });
+
      window.scrollTo({
       top: 0,
       left: 0,
@@ -356,8 +579,21 @@ computed:{
         }
         return Number(this.cartdata[0].selectedItem.price) + Number(addonsPrice)
     },
+    priceToPayAtStore(){
+      if(this.booking_type.booking_type == 'Book bike at Rs. 1000'){
+        return this.totalPrice - Number(1000)
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 20000'){
+        return this.totalPrice - Number(20000)
+      }
+      else if(this.booking_type.booking_type == 'book bike at rupees Rs. 30000'){
+        return this.totalPrice - Number(30000)
+      }else{
+        return 0
+      }
+    },
     convenienceAmount(){
-        if(this.booking_type.booking_type == 'Book bike at rupees Rs. 1000'){
+        if(this.booking_type.booking_type == 'Book bike at Rs. 1000'){
         return 0
       }
       else if(this.booking_type.booking_type == 'book bike at rupees Rs. 20000'){
@@ -371,7 +607,7 @@ computed:{
        
     },
     checkOutPrice(){
-        if(this.booking_type.booking_type == 'Book bike at rupees Rs. 1000'){
+        if(this.booking_type.booking_type == 'Book bike at Rs. 1000'){
         return Number(1000)
       }
       else if(this.booking_type.booking_type == 'book bike at rupees Rs. 20000'){
@@ -384,8 +620,8 @@ computed:{
       }
        
     },
-    valid(){
-        if(this.first_name && this.last_name && this.phone_number && this.email){
+    error(){
+        if(this.first_name == "" && this.last_name=="" && this.phone_number=="" && this.email==""){
             return true
         }else{
             return false
@@ -401,11 +637,37 @@ computed:{
 
 
 <style scoped>
+.web{
+    display: block !important;
+}
+.ifselected{
+    color: #20BD99;
+    border-bottom: 2px solid #20BD99;
+    font-family:gilroyf
+}
+.mob{
+    display: none !important;
+}
 .widt{
     width:4%
 }
 .cvbb{
     margin-left:50px
+}
+.wid{
+  width: 45%;
+}
+.dot {
+  height: 25px;
+  width: 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid black;
+}
+:disabled {
+  background: #dddddd;
 }
 .form__label {
   font-family: 'Roboto', sans-serif;
@@ -418,17 +680,15 @@ computed:{
 }
 
 .form__input {
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-  font-size: 14px;
-  padding: 0.6rem 2rem;
-  border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
-    border: 0.1px solid grey;
   width: 100%;
-  display: block;
+    font-size: 14px;
+    padding: 12px;
+    border: 1px solid #d4d5d9;
+    background-color: transparent;
+    font-weight: 300;
+    border-radius: 4px;
+    line-height: 14px;
 
-  transition: all 0.3s;
 }
 
 .form__input:placeholder-shown + .form__label {
@@ -443,6 +703,12 @@ a{
 }
 .button:disabled{
     opacity: 0.2 !important;
+}
+*:focus {
+    outline: 0 !important;
+}
+.bv:hover{
+    box-shadow: 10px 10px 5px #ccc;
 }
  @font-face {
   font-family: Gilroy;
@@ -466,6 +732,12 @@ a{
  .ghj{
      text-align:center !important
  }
+ .web{
+    display: none !important;
+}
+.mob{
+    display: block !important;
+}
  .cvbb{
     margin-left:10px !important
 }

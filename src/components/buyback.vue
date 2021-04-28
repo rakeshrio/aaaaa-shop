@@ -107,7 +107,7 @@
                         
                         <div class="text-center ml-5">
                           <div class="col-12 text-center xcv mt-3" >
-                              <button  type="button" class="btn  _2iiQB _3qpfi text-center"  @click="submit" :disabled="watchsendingrequest">
+                              <button  type="button" class="btn  _2iiQB _3qpfi text-center"  @click="submit" :disabled="error">
                                 Submit
                               </button>
                               <!-- <span v-if="loading" class="spinner-border spinner-border-sm"></span> -->

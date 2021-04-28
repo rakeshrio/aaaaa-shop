@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import home from '../components/home'
 import models from '../components/models'
 import cart from '../components/cart'
+import displaynext from '../components/displaynext'
 import display from '../components/display'
 import landingpage from '../components/landingpage'
 import checkout from '../components/checkout'
@@ -32,6 +33,7 @@ import play from '../components/play'
 import comparetest from '../components/comparetest'
 import carttest from '../components/carttest'
 import bb from '../components/bb'
+import notfound from '../components/notfound'
 import thankyou_buyback from '../components/thankyou_buyback'
 import thankyou_newtwowheelers from '../components/thankyou_newtwowheelers'
 import thankyou_loanagainstvehicle from '../components/thankyou_loanagainstvehicle'
@@ -42,7 +44,7 @@ Vue.use(VueRouter)
 const routes = [
 
   { path: '/models', component: models },
-  
+  { path: '*', component: notfound },
   { path: '/thankyou_buyback', component: thankyou_buyback },
   { path: '/thankyou_newtwowheelers', component: thankyou_newtwowheelers },
   { path: '/thankyou_loanagainstvehicle', component: thankyou_loanagainstvehicle },
@@ -57,9 +59,10 @@ const routes = [
   { path: '/purchase', component: purchase },
   { path: '/cart/:id/:value', component: cart },
   { path: '/display/:id', component: display },
+  { path: '/displaynext/:id', component: displaynext },
   { path: '/display2/:id', component: displaytest },
   { path: '/', component: home},
-  { path: '/checkout/:id/:value', component: checkout },
+  { path: '/checkout/:id/:value', component: checkout,  meta: { hideNavigation: true }},
   { path: '/landingpage', component: landingpage },
   { path: '/catalogue', component: catalogue },
   { path: '/comparetest', component: comparetest },

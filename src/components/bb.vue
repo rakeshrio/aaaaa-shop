@@ -62,7 +62,7 @@
                     </div>
                     <div class="text-center ml-5">
                         <div class="col-12 text-center xcv mt-5"  v-if="!success">
-                            <button  type="button" class="btn  _2iiQB _3qpfi text-center" @click="submit" :disabled="watchsendingrequest"> Apply Now </button>
+                            <button  type="button" class="btn  _2iiQB _3qpfi text-center" @click="submit" :disabled="error"> Apply Now </button>
                             <span v-if="loading" class="spinner-border spinner-border-sm"></span>
                         </div>
                     </div>
@@ -258,7 +258,7 @@ export default {
   },
      computed:{
      error(){
-         if(this.fullname ==""||this.mobile==""||this.know_two_wheeler==""||this.aadhar_card==""||this.pancard ==""||this.dob==""||this.gender==""||this.city==""||this.year_of_purchase==""||this.registration_no==""){
+         if(this.fullname ==""&&this.mobile==""&&this.know_two_wheeler==""&&this.fullname==""){
              return true
          }else{
              return false

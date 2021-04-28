@@ -1,8 +1,10 @@
+
 <template>
-    <div class="col-md-12">
-        <h2>Congratulation</h2>
-        <p>Payment Sucessfull</p>
-        <p>ORDER ID: {{order_id}}</p>
+    <div class="col-md-8 m-auto col-12 pt-5" style="font-family:gilroy">
+        <h3 style="font-family:gilroyf">Thank you for your order!</h3>
+        <p>Currently we are processing your order</p>
+        <p style="font-family:gilroyf">ORDER ID: {{order_id}}</p>
+        <img src="../assets/success.svg" alt="">
     </div>
 </template>
 <script>
@@ -17,3 +19,14 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+@font-face {
+  font-family: Gilroyf;
+  src: url(../assets/font/Gilroy-ExtraBold.otf);
+}
+@font-face {
+  font-family: Gilroy;
+  src: url(../assets/font/Gilroy-Light.otf);
+}
+</style>

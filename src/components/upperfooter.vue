@@ -17,20 +17,19 @@
                 </div>
                 <div class=" m-0 p-0">
                     <div class="col-md-12 col-12 text-left m-0 p-0">
-                        <h3 class="mb-3" style="font-family:gilroyf; color:black" >Company</h3>
-                        <p class="mb-3">About Us</p>
-                        <p class="mb-3">FAQ</p>
-                        <p class="mb-3">Contact Us</p>
-                        <p class="mb-1">Blog</p>
+                        <h3 class="mb-3" style="font-family:gilroyf; color:black" >About </h3>
+                        <a href="https://on-track.in/about/"><p class="mb-3">Our Story</p></a>
+                        <!-- <p class="mb-3">FAQ</p> -->
+                        <a href="https://on-track.in/blog-2/"><p class="mb-1">Blog</p></a>
                     </div>
                 </div>
                 <div class="  m-0 p-0">
                     <div class="col-md-12 col-12 text-left m-0 p-0">
-                        <h3 class="mb-3" style="font-family:gilroyf;color:black ">About Us</h3>
-                        <p class="mb-3">Terms & Conditions</p>
-                        <p class="mb-3">Privacy Policy</p>
-                        <p class="mb-3">Disclaimer Policy</p>
-                        <p class="mb-1">Copyright Guidelines</p>
+                        <h3 class="mb-3" style="font-family:gilroyf;color:black ">Company</h3>
+                        <p class="mb-3" @click="$router.push('/termsandcondition')" style="cursor:pointer">Terms & Conditions</p>
+                        <a href="https://on-track.in/privacy-policy2/"><p class="mb-3">Privacy Policy</p></a>
+                        <a href="mailto:info@on-track.in"><p class="mb-3">Partner With Us</p></a>
+                        <!-- <p class="mb-1">Copyright Guidelines</p> -->
                     </div>
                 </div>
                 <div class=" ml-5 text-center">
@@ -49,7 +48,7 @@
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </div>
                             <div class="col-md-10 m-0 p-0">
-                               <p>tech@on-track.in</p>
+                              <a href="mailto:info@on-track.in"><p>tech@on-track.in</p></a>
                             
                             </div>
                         </div>
@@ -58,7 +57,7 @@
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </div>
                             <div class="col-md-10 m-0 p-0">
-                               <p>+91 9916148887</p>
+                               <a href="tel:+91-9148518401"><p>+91 91485 18401</p></a>
                              
                             </div>
                         </div>
@@ -177,6 +176,9 @@ methods:{
 .mob{
   display: none  !important;
 }
+.lap{
+    display: block !important;
+}
 p{
     font-size:14px
 }
@@ -203,7 +205,7 @@ a{
 }
 @media screen and (max-width: 600px) {
   .mob{
-    display: block;
+    display: block !important;
 
   }
   .lap{
