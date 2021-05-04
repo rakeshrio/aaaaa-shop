@@ -317,8 +317,7 @@ input:focus, textarea:focus, select:focus{
 .zxcvb {
   opacity: 0.3;
 }
-.banner {
-}
+
 .fontt {
   font-size: 12px;
   font-weight: 600;
