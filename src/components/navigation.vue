@@ -5,7 +5,7 @@
     <div class="col-md-8 m-auto p-0">
         <nav class="navbar navbar-expand-sm  navbar-light justify-content-between mx-0 px-0">
                         <img src="https://on-track.in/wp-content/uploads/2018/10/logo.svg" alt="">
-                        <ul class="navbar-nav" >
+                        <ul class="navbar-nav" style="font-family:gilroy">
                             <li class="nav-item1 ">
                                 <p class="nav-link mx-3 mb-0 " href="#" @click="$router.push('/finance')">Finance</p>
                             </li>

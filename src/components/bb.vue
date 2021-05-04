@@ -71,11 +71,11 @@
         </div>
     </div>
     <div class="col-12 m-0 p-0 bg" >
-        <div class="col-12 pl-4 mt-5">
-            <p class="newp1 text-left rak mb-5">Features<span style="color:#fba500"></span></p>
+        <div class="col-12 pl-4 mt-5" style="font-family:gilroy">
+            <p class="newp1 text-left rak mb-5" style="font-family:gilroyf; color: #465166;">Features<span style="color:#fba500"></span></p>
         </div>
         <div class="col-12 m-0 p-0">  
-            <div class="col-12 row m-0 p-0">
+            <div class="col-12 row m-0 p-0"  style="font-family:gilroy">
                 <div class="col-6 mb-4 text-center m-0 p-0">
                     <img src="https://bikex.in/img/clock.a522f251.svg" alt="" width="30%" height="auto">
                     <p class="newp2">Quick Loan Processing</p>
@@ -95,9 +95,9 @@
             </div>
         </div>
     </div>
-    <div class="col-12 m-0 p-0 bg1" style="color:white; " >
+    <div class="col-12 m-0 p-0 bg1" style="color:white; font-family:gilroy" >
         <div class="col-12 pl-4 pt-5">
-            <p class="newp11 text-left rak mb-5">How it works?</p>
+            <p class="newp11 text-left rak mb-5" style="font-family:gilroyf; color: #465166;">How it works?</p>
         </div>
         <div class="col-12 m-0 p-0">
            <div class="col-12 row m-0 p-0 ">
@@ -105,7 +105,7 @@
                   <img src="../assets/cf.png" class="icon" alt="" width="30%" height="auto">  
                 </div> 
                 <div class="col-8 text-left  ml-0 pl-0">
-                    <p class="newp11">Begins With Form</p>
+                    <p class="newp11" style="font-family:gilroyf; color: #465166;">Begins With Form</p>
                     <p class="newp22">Just provide basic details about your vehicle in the above form and then our team will follow up.</p>
                 </div>    
             </div>
@@ -115,7 +115,7 @@
                   <img src="../assets/incall.png" class="icon" alt="" width="30%" height="auto">  
                 </div> 
                 <div class="col-8  text-left ml-0 pl-0">
-                    <p class="newp11">In Call Verification</p>
+                    <p class="newp11" style="font-family:gilroyf; color: #465166;">In Call Verification</p>
                     <p class="newp22">Our expert team call and verify regarding your application.</p>
                 </div>    
             </div> 
@@ -125,15 +125,15 @@
                   <img src="../assets/bikestep.png" class="icon" alt="" width="30%" height="auto">  
                 </div> 
                 <div class="col-8 text-left ml-0 pl-0">
-                    <p class="newp11">Bike At Your Step</p>
+                    <p class="newp11" style="font-family:gilroyf; color: #465166;">Bike At Your Step</p>
                     <p class="newp22">Once we come to a decision on the price. Buying has never been easier !</p>
                 </div>    
             </div> 
         </div>
     </div>
         <div class="col-12 m-0 p-0 ">
-            <div class="col-12 pl-4 mt-5">
-                <p class="newp1 text-left rak mb-5">Loan Eligibility Criteria</p>
+            <div class="col-12 pl-4 mt-5" style="font-family:gilroy">
+                <p class="newp1 text-left rak mb-5" style="font-family:gilroyf; color: #465166;">Loan Eligibility Criteria</p>
                 <img src="https://cashkumarcdn-etyacoltechnolog.netdna-ssl.com/img/frontend/backgrounds/personal-loan/personal-loan-tips.svg" alt="" width="80%" height="auto">
                 <div class="col-12 d-flex m-0 mt-5 p-0">
                     <p ><i class="fa fa-check" style="font-size:15px;color:green"></i></p>
@@ -258,10 +258,10 @@ export default {
   },
      computed:{
      error(){
-         if(this.fullname ==""&&this.mobile==""&&this.know_two_wheeler==""&&this.fullname==""){
-             return true
-         }else{
+         if(this.fullname&&this.mobile&&this.know_two_wheeler&&this.city){
              return false
+         }else{
+             return true
          }
      },
        watchsendingrequest(){
@@ -454,7 +454,8 @@ input:not(:focus):valid ~ .floating-label{
   opacity: 1;
   z-index: 1;
   outline: none !important;
-  box-shadow: none !important
+  box-shadow: none !important;
+  font-family:gilroy
 }
 .form-control{
     border:none !important

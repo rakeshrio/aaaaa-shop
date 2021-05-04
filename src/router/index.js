@@ -37,6 +37,7 @@ import notfound from '../components/notfound'
 import thankyou_buyback from '../components/thankyou_buyback'
 import thankyou_newtwowheelers from '../components/thankyou_newtwowheelers'
 import thankyou_loanagainstvehicle from '../components/thankyou_loanagainstvehicle'
+import twowheelerloanidfc from '../components/twowheelerloanidfc'
 
 
 Vue.use(VueRouter)
@@ -44,6 +45,7 @@ Vue.use(VueRouter)
 const routes = [
 
   { path: '/models', component: models },
+  { path: '/twl', component: twowheelerloanidfc ,  },
   { path: '*', component: notfound },
   { path: '/thankyou_buyback', component: thankyou_buyback },
   { path: '/thankyou_newtwowheelers', component: thankyou_newtwowheelers },

@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-12 m-0 pt-5 p-0 " style="background:white; color:#7d7d7d; font-family:gilroy; z-index:99999" >
+    <div class="col-md-12 m-0 pt-5 p-0 " style="background:#F9FAFB; color:#7d7d7d; font-family:gilroy; " >
         <div class="col-md-8  m-auto m-0 p-0 lap">
             <div class="col-md-12 m-0 p-0 row justify-content-between ">
                 <div class=" m-0 p-0">
