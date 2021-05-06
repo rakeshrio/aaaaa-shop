@@ -554,95 +554,132 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="col-md-12 m-0 p-0 py-5" style="background: #e9e8fb">
-                  <h3 class="mb-5" style="font-family: gilroyf">
-                    Fill up the following information
-                  </h3>
-                  <div class="col-md-8 m-auto text-center">
-                    <p style="font-family: gilroyf">Employment Status</p>
-                    <div class="row col-md-12 mb-3">
-                      <div class="col-md-6">
-                        <input
-                          type="radio"
-                          id="vehicle1"
-                          name="vehicle1"
-                          value="Yes"
-                        />
-                        <label for="vehicle1"> Salaried</label><br />
-                      </div>
-                      <div class="col-md-6">
-                        <input
-                          type="radio"
-                          id="vehicle2"
-                          name="vehicle2"
-                          value="No"
-                        />
-                        <label for="vehicle2"> Self Employed</label><br />
-                      </div>
+                <div class="col-md-12  m-0 p-0 py-4">
+                  <img src="../assets/personal.png">
+                  <div class="col-md-12 m-auto  py-3 text-center">
+                    <p style="font-family: gilroyf">Personal Details</p>
+                        <div class="col-md-6 d-flex m-auto text-center ml-3 ">
+                            
+                               <div class="  dropdown-toggle border border-dark"  data-toggle="dropdown">Title</div>
+                             
+                               <div ><input type="text" class="pr-5" placeholder="Full Name"></div>
+                               
+                         </div>
+                         <div class="col-md-6 d-flex m-auto text-center pt-3 ml-3">
+                              
+                                   <div><input type="text" class="pr-5" placeholder="Email id"></div>
+                                   <div class=" dropdown-toggle border border-dark"  data-toggle="dropdown">.com</div>
+                               
+  
+                          </div>
+                          <div class="col-md-6  m-auto pr-5 text-center pt-3 ">
+                          <input
+                           type="text"
+                             class="py-5 pr-5 pl-2"
+                              name=""
+                            id=""
+                            placeholder="442, 9th Main Road,Indiranagar"
+                           style=""
+                      />
                     </div>
+                    <div class="col-md-6 m-auto text-center pr-5 pt-3 ">
+                      <input
+                        type="text"
+                        class="pr-5 pl-2 "
+                        name=""
+                        id=""
+                        placeholder="Bangalore"
+                        style=""
+                      />
+                    </div>
+                    <div class="col-md-6 pt-3 pr-5 m-auto text-center">
+                      <input
+                        type="text"
+                        class="pr-5 pl-2"
+                        name=""
+                        id=""
+                        placeholder="Karnataka"
+                        style=""
+                      />
+                    </div>
+                    <div class="col-md-6 pt-3 pr-5 m-auto text-center">
+                      <input
+                        type="text"
+                        class="pr-5 pl-2"
+                        name=""
+                        id=""
+                        placeholder="560008"
+                        style=""
+                      />
+                    </div>
+                    <h5 class="pt-3 pr-5">Property Status</h5>
+                    <div class="container col-md-4 pr-4">
+                             <div class="row text-center m-auto">
+                                 <div class="col  " style="border:1px solid black">
+                                   <img src="../assets/housee.png" class="mt-3" alt="">
+                                    <p>Rented</p>
+                                   </div>
+                                   <div class="col " style="border:1px solid black">
+                                     <img src="../assets/home.png" class="mt-3" alt="">
+                                     <p>Owned</p>
+                                    </div>
+                               </div>
+                     </div>
+                   </div>
+
+                  
+                  <div class="col-md-12 mt-4">
+                    <button class="px-5 py-2 btnstyle" @click="step++">
+                      Submit
+                    </button>
                   </div>
-                  <div class="col-md-12 row">
-                    <div class="col-md-6 mb-4">
+                </div>
+              </div>
+            </div>
+          </div>
+<div class="col-md-12 mt-5" v-if="step == 4">
+  <div class="col-md-12 row m-0 p-0">
+            <div
+                class="col-md-4 m-0 p-0"
+                style="font-family: gilroy; color: white">
+                <div class="col-md-12 py-5 mr-3" style="background: #4e44d8">
+                  <h3 class="mb-5 mt-5" style="font-family: gilroyf">
+                    Check your <br />
+                    Eligibility
+                  </h3>
+                  <p class="pt-2 mx-0 px-5 mb-2 mb-0">Mobile Verification</p>
+                  <p class="mb-5 mt-5 pt-3">PAN Verification</p>
+                  <p class="mb-5 pt-3">
+                    <a class="pt-2" style="border-bottom: 3.5px solid #ced844"
+                      >Personal Details</a
+                    >
+                  </p>
+                </div>
+              </div>
+               <div class="col-md-8">
+                 <div class="col-md-12 m-auto  text-center p-0 py-3">
+                  <img src="../assets/emp.png">
+                    <div class="col-md-6 m-auto text-center pt-3 ">
                       <input
                         type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Full Name"
-                        style=""
-                      />
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Email ID"
-                        style=""
-                      />
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Address Line 1"
-                        style=""
-                      />
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Address Line 2"
-                        style=""
-                      />
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Pincode"
-                        style=""
-                      />
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
+                        class="pr-5 pl-2 "
                         name=""
                         id=""
                         placeholder="Company's Name"
                         style=""
                       />
                     </div>
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-6  m-auto pt-3 text-center">
+                          <input
+                           type="text"
+                             class="py-5 pr-5 pl-2"
+                              name=""
+                            id=""
+                            placeholder="Company's Address"
+                           style=""
+                      />
+                    </div>
+                    <div class="col-md-6 m-auto pt-3 align-middle">
                       <input
                         type="text"
                         class="pr-5 pl-2"
@@ -652,17 +689,7 @@
                         style=""
                       />
                     </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Company's Address"
-                        style=""
-                      />
-                    </div>
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-6 m-auto text-center pt-3">
                       <input
                         type="text"
                         class="pr-5 pl-2"
@@ -672,7 +699,7 @@
                         style=""
                       />
                     </div>
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-6 m-auto text-center pt-3">
                       <input
                         type="text"
                         class="pr-5 pl-2"
@@ -682,37 +709,42 @@
                         style=""
                       />
                     </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Select Vehicle"
-                        style=""
-                      />
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <input
-                        type="text"
-                        class="pr-5 pl-2"
-                        name=""
-                        id=""
-                        placeholder="Loan Amount"
-                        style=""
-                      />
-                    </div>
-                  </div>
+                   
+                    <h5 class="pt-3">Employment Status</h5>
+                    <div class="container col-md-6">
+                             <div class="row text-center m-auto" >
+                                 <div class="col shadow active" style="border:1px solid black">
+                                   <img src="../assets/salary.png" class="mt-3" alt="">
+                                    <p>Salaried</p>
+                                   </div>
+                                   <div class="col shadow" style="border:1px solid black">
+                                     <img src="../assets/salaryman.png" class="mt-3" alt="">
+                                     <p>Self-Employed</p>
+                                    </div>
+                               </div>
+                     </div>
+                   
+
+                  
                   <div class="col-md-12 mt-5">
                     <button class="px-5 py-2 btnstyle" @click="step++">
                       Submit
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12 mt-5" v-if="step == 4">
+
+
+
+
+
+
+                 </div>
+
+    </div>
+</div>
+
+
+          <div class="col-md-12 mt-5" v-if="step == 5">
             <img
               class="img-fluid"
               src="../assets/thank.png"
